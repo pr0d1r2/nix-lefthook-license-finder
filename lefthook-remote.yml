@@ -1,0 +1,14 @@
+---
+pre-commit:
+  commands:
+    license-finder:
+      glob: "{Gemfile,Gemfile.lock}"
+      run: bundle exec license_finder --quiet 2>/dev/null
+      timeout: 60s
+
+pre-push:
+  commands:
+    license-finder:
+      glob: "{Gemfile,Gemfile.lock}"
+      run: bundle exec license_finder --quiet 2>/dev/null
+      timeout: 60s
